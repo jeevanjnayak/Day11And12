@@ -16,21 +16,19 @@ public class DeckOfCard {
             "SAce" };
 
     static String[][] deck = { Clubs, Diamonds, Hearts, Spades };
-    static String[][] newDeck;
 
     public static void cardSelect() {
         Random c = new Random();
         int x = c.nextInt(4);
         int y = c.nextInt(13);
-        if (newDeck[x][y] == null) {
+        if (deck[x][y] == null) {
             cardSelect();
         } else {
-            System.out.print(newDeck[x][y] + ", ");
-            newDeck[x][y] = null;
+            System.out.print(deck[x][y] + ", ");
+            deck[x][y] = null;
         }
     }
     public static void serve() {
-        newDeck = deck;
         for (int i = 1; i < 5; i++) {
             System.out.println("\nFor Player" + i);
             for (int j = 1; j < 10; j++) {
